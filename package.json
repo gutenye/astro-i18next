@@ -1,6 +1,6 @@
 {
   "name": "@gutenye/astro-i18next",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
   "exports": {
     ".": "./build/index.js",
@@ -18,7 +18,7 @@
     "build"
   ],
   "peerDependencies": {
-    "i18next": "^25.7.3"
+    "i18next": "*"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.3.10",
