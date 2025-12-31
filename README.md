@@ -16,15 +16,33 @@
 
 ## 📖 Getting Started
 
-Install package
+### 1. Install the package
 
 ```sh
-astro add @gutenye/astro-i18next
+npx astro add @gutenye/astro-i18next
 ```
 
-Create Tranactions
+### 2. Create translation files
 
-Edit `src/locales/index.ts`
+Create your locale files in `src/locales/`:
+
+**`src/locales/en.json`**
+
+```json
+{
+  "greeting": "Hello, World!"
+}
+```
+
+**`src/locales/fr.json`**
+
+```json
+{
+  "greeting": "Bonjour, le Monde!"
+}
+```
+
+**`src/locales/index.ts`**
 
 ```ts
 import en from "./en.json";
@@ -32,46 +50,47 @@ import fr from "./fr.json";
 
 export const defaultLocale = "en";
 
-export const locales = {
-  en,
-  fr,
-};
+export const locales = { en, fr };
 ```
 
-Edit `src/locales/en.json`
+### 3. Configure Astro
 
-```json
-{
-  "hello": "Hello"
-}
-```
-
-Edit `astro.config.mjs`
+**`astro.config.mjs`**
 
 ```ts
-import i18next from "@gutenye/astro-i18next";
-import { defaultLocale, locales } from "./src/locales";
+import i18next from '@gutenye/astro-i18next'
+import { defaultLocale, locales } from ''./src/locales'
 
 export default defineConfig({
   integrations: [i18next({ defaultLocale, locales })],
 });
 ```
 
-Edit `src/pages/[...locale]/page1.astro`
+### 4. Create localized pages
+
+Create pages under `src/pages/[...locale]/` to enable locale routing:
+
+**`src/pages/[...locale]/index.astro`**
 
 ```astro
 ---
 import { t } from 'i18next'
-export { getStaticPaths } from '~/i18next'
+export { getStaticPaths } from '@gutenye/astro-i18next'
 ---
-<div>t('hello')</div>
+<div>t('greeting')</div>
 ```
 
-Start the astro server or build it
+### 5. Run or build your site
 
 ```sh
-Vist /page1 or /fr/page1
+npm run dev
+npm run build
 ```
+
+Visit your localized pages:
+
+- `/` → English (default locale)
+- `/fr` → French
 
 ## 🤝 Contributing
 
