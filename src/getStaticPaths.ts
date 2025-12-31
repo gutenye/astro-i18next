@@ -1,5 +1,5 @@
 import * as config from 'astro:config/server'
-import invariant from 'tiny-invariant'
+import { invariant } from '~/utils'
 
 invariant(config.i18n, 'getStaticPaths: i18n is not configured')
 

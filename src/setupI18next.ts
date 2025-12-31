@@ -1,5 +1,5 @@
 import i18next from 'i18next'
-import { mapValues } from 'lodash-es'
+import { mapValues } from '~/utils'
 import type { Options } from './integration'
 
 export function setupI18next(options: Options) {

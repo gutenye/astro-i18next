@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "types": ["astro/client"],
     "lib": ["ESNext"],
     "target": "ESNext",
     "module": "Preserve",
