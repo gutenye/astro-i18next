@@ -1,15 +1,104 @@
-# astro-i18next
+# 🧩 Astro I18next 🧩
 
-To install dependencies:
+**i18next for Astro**
 
-```bash
-bun install
+**Show your ❤️ and support by starring this project and following the author, [Guten Ye](https://github.com/gutenye)!**
+
+[![Stars](https://img.shields.io/github/stars/gutenye/astro-i18next?style=social)](https://github.com/gutenye/astro-i18next)
+[![NPM Version](https://img.shields.io/npm/v/@gutenye/astro-i18next)](https://www.npmjs.com/package/@gutenye/astro-i18next)
+[![License](https://img.shields.io/github/license/gutenye/astro-i18next?color=blue)](https://github.com/gutenye/astro-i18next/blob/main/LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-blue)](https://github.com/gutenye/astro-i18next#-contribute)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white)](https://www.typescriptlang.org)
+
+## 🌟 Features
+
+- **Fast to load**: Emit zero JS, translate on buildtime
+
+## 📖 Getting Started
+
+Install package
+
+```sh
+astro add @gutenye/astro-i18next
 ```
 
-To run:
+Create Tranactions
 
-```bash
-bun run index.ts
+Edit `src/locales/index.ts`
+
+```ts
+import en from "./en.json";
+import fr from "./fr.json";
+
+export const defaultLocale = "en";
+
+export const locales = {
+  en,
+  fr,
+};
 ```
 
-This project was created using `bun init` in bun v1.3.5. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.
+Edit `src/locales/en.json`
+
+```json
+{
+  "hello": "Hello"
+}
+```
+
+Edit `astro.config.mjs`
+
+```ts
+import i18next from "@gutenye/astro-i18next";
+import { defaultLocale, locales } from "./src/locales";
+
+export default defineConfig({
+  integrations: [i18next({ defaultLocale, locales })],
+});
+```
+
+Edit `src/pages/[...locale]/page1.astro`
+
+```astro
+---
+import { t } from 'i18next'
+export { getStaticPaths } from '~/i18next'
+---
+<div>t('hello')</div>
+```
+
+Start the astro server or build it
+
+```sh
+Vist /page1 or /fr/page1
+```
+
+## 🤝 Contributing
+
+We love contributions! Whether you're fixing bugs, adding features, or improving documentation, your involvement makes this project better.
+
+**How to Contribute:**
+
+1. **Fork** the Repository
+2. **Make** your changes (bug fixes, features, docs)
+3. **Test** your changes thoroughly
+4. **Open** a Pull Request on GitHub
+
+**Looking for ideas?** Check out our [issues](https://github.com/gutenye/astro-i18next/issues) for bugs and feature requests!
+
+---
+
+Thank you for using Astro I18next! If you found it helpful, please ⭐️ **star the project** ⭐ on GitHub.
+
+**Need help?** Check our [documentation](#-documentation) or [report an issue](https://github.com/gutenye/astro-i18next/issues) if you encounter any problems.
+
+**Special Thanks to All Contributors:**
+
+[![Contributors](https://contrib.rocks/image?repo=gutenye/astro-i18next)](https://github.com/gutenye/astro-i18next/graphs/contributors)
+
+---
+
+<p align="center">
+  <strong><a href="#readme">⬆ Back to top ⬆</a></strong><br><br>
+  Made with ❤️ by <a href="https://github.com/gutenye">Guten Ye</a>
+</p>
