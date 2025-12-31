@@ -1,6 +1,6 @@
 import i18next from 'i18next'
-import { mapValues } from '~/utils'
-import type { Options } from './integration'
+import type { Options } from '~/types.js'
+import { mapValues } from '~/utils/index.js'
 
 export function setupI18next(options: Options) {
   const { defaultLocale, locales } = options

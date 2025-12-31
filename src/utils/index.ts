@@ -1,2 +1,2 @@
-export * from './invariant'
-export * from './mapValues'
+export * from './invariant.js'
+export * from './mapValues.js'

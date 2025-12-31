@@ -1,1 +1,1 @@
-export type * from './integration'
+export type * from './integration/index.js'

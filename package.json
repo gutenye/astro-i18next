@@ -1,22 +1,29 @@
 {
   "name": "@gutenye/astro-i18next",
-  "module": "index.ts",
   "type": "module",
-  "dependencies": {
-    "lodash-es": "^4.17.22"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "^2.3.10",
-    "@types/bun": "latest",
-    "@types/lodash-es": "^4.17.12",
-    "astro": "^5.16.6"
-  },
-  "peerDependencies": {
-    "i18next": "^25.7.3",
-    "typescript": "^5"
+  "exports": {
+    ".": "./build/index.js",
+    "./integration": "./build/integration/index.js",
+    "./middleware": "./build/middleware.js"
   },
   "scripts": {
     "lint": "biome check --fix",
-    "lint:ci": "biome ci --reporter=github"
+    "lint:ci": "biome ci --reporter=github",
+    "dev": "rm -rf build; tsc --project tsconfig.build.json --watch; tsc-alias --project tsconfig.build.json --watch",
+    "build": "rm -rf build; tsc --project tsconfig.build.json; tsc-alias --project tsconfig.build.json"
+  },
+  "files": [
+    "build"
+  ],
+  "peerDependencies": {
+    "i18next": "^25.7.3"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.3.10",
+    "@tsconfig/bun": "^1.0.10",
+    "@types/bun": "latest",
+    "astro": "^5.16.6",
+    "tsc-alias": "^1.8.16",
+    "typescript": "^5.9.3"
   }
 }

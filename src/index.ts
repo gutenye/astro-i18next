@@ -1,1 +1,1 @@
-export * from './getStaticPaths'
+export * from './getStaticPaths.js'

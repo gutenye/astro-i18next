@@ -1,6 +1,6 @@
 import type { HookParameters } from 'astro'
-import { setupI18next } from '~/setupI18next'
-import type { Options } from '~/types'
+import { setupI18next } from '~/setupI18next.js'
+import type { Options } from '~/types.js'
 
 export function createConfigSetup(options: Options) {
   return function configSetup({
@@ -22,7 +22,7 @@ export function createConfigSetup(options: Options) {
       },
     })
     addMiddleware({
-      entrypoint: `${import.meta.dirname}/middleware`,
+      entrypoint: '@gutenye/astro-i18next/middleware',
       order: 'post',
     })
   }

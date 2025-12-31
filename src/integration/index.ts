@@ -1,5 +1,5 @@
 import type { AstroIntegration } from 'astro'
-import { createConfigSetup } from './createConfigSetup'
+import { createConfigSetup } from './createConfigSetup.js'
 
 export default function createIntegration(options: Options): AstroIntegration {
   return {
