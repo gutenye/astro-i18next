@@ -1,6 +1,6 @@
 {
   "name": "@gutenye/astro-i18next",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "exports": {
     ".": "./build/index.js",
@@ -27,8 +27,5 @@
     "astro": "^5.16.6",
     "tsc-alias": "^1.8.16",
     "typescript": "^5.9.3"
-  },
-  "dependencies": {
-    "astro-i18n-aut": "^0.7.3"
   }
 }
