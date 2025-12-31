@@ -1,16 +1,8 @@
-import type { AstroIntegration, HookParameters } from 'astro'
-import { setupI18next } from './setupI18next'
+import type { HookParameters } from 'astro'
+import { setupI18next } from '~/setupI18next'
+import type { Options } from '~/types'
 
-export default function createIntegration(options: Options): AstroIntegration {
-  return {
-    name: 'i18next',
-    hooks: {
-      'astro:config:setup': createConfigSetup(options),
-    },
-  }
-}
-
-function createConfigSetup(options: Options) {
+export function createConfigSetup(options: Options) {
   return function configSetup({
     addMiddleware,
     updateConfig,
@@ -34,9 +26,4 @@ function createConfigSetup(options: Options) {
       order: 'post',
     })
   }
-}
-
-export interface Options {
-  locales: Record<string, any>
-  defaultLocale: string
 }
