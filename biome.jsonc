@@ -27,8 +27,8 @@
     },
     "parser": {
       // parameter decorator: for tsyringe
-			"unsafeParameterDecoratorsEnabled": true
-		}
+      "unsafeParameterDecoratorsEnabled": true
+    }
   },
   "vcs": {
     "enabled": true,

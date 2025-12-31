@@ -1,5 +1,6 @@
 {
   "name": "@gutenye/astro-i18next",
+  "version": "1.0.0",
   "type": "module",
   "exports": {
     ".": "./build/index.js",
@@ -7,6 +8,7 @@
     "./middleware": "./build/middleware.js"
   },
   "scripts": {
+    "prepublishOnly": "bun run build",
     "lint": "biome check --fix",
     "lint:ci": "biome ci --reporter=github",
     "dev": "rm -rf build; tsc --project tsconfig.build.json --watch; tsc-alias --project tsconfig.build.json --watch",
@@ -25,5 +27,8 @@
     "astro": "^5.16.6",
     "tsc-alias": "^1.8.16",
     "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "astro-i18n-aut": "^0.7.3"
   }
 }
