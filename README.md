@@ -12,7 +12,7 @@
 
 ## 🌟 Features
 
-- **Fast to load**: Emit zero JS, translate on buildtime
+Runs entirely at build time, emits zero client-side JavaScript, and follows the same core idea as Astro, generating static HTML for fast load times and minimal runtime overhead.
 
 ## 📖 Getting Started
 
