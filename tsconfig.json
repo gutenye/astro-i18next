@@ -1,7 +1,6 @@
 {
   "extends": "@tsconfig/bun/tsconfig.json",
   "compilerOptions": {
-    "types": ["astro/client"],
     "baseUrl": ".",
     "paths": {
       "~/*": ["src/*"],
