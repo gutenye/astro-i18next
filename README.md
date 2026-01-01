@@ -6,7 +6,7 @@
 
 [![Stars](https://img.shields.io/github/stars/gutenye/astro-i18next?style=social)](https://github.com/gutenye/astro-i18next)
 [![NPM Version](https://img.shields.io/npm/v/@gutenye/astro-i18next)](https://www.npmjs.com/package/@gutenye/astro-i18next)
-[![License](https://img.shields.io/github/license/gutenye/astro-i18next?color=blue)](https://github.com/gutenye/astro-i18next/blob/main/LICENSE)
+[![License](https://img.shields.io/badge/license-Elastic-blue)](https://github.com/gutenye/astro-i18next/blob/main/LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-blue)](https://github.com/gutenye/astro-i18next#-contribute)
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white)](https://www.typescriptlang.org)
 
