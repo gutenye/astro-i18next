@@ -1,6 +1,6 @@
 import type { HookParameters } from 'astro'
 import { setupI18next } from '~/setupI18next.js'
-import type { Options } from '~/types.js'
+import type { Options } from '~/types/index.js'
 
 export function createConfigSetup(options: Options) {
   return function configSetup({

@@ -1,5 +1,5 @@
 import i18next from 'i18next'
-import type { Options } from '~/types.js'
+import type { Options } from '~/types/index.js'
 import { mapValues } from '~/utils/index.js'
 
 export function setupI18next(options: Options) {
