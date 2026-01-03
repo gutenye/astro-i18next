@@ -13,4 +13,5 @@ export default function createIntegration(options: Options): AstroIntegration {
 export interface Options {
   locales: Record<string, any>
   defaultLocale: string
+  loadPath: string
 }

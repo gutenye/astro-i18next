@@ -28,6 +28,9 @@
   "files": [
     "build"
   ],
+  "dependencies": {
+    "i18next-fs-backend": "^2.6.1"
+  },
   "peerDependencies": {
     "i18next": "*"
   },
@@ -41,8 +44,5 @@
     "conventional-changelog-conventionalcommits": "^9.1.0",
     "tsc-alias": "^1.8.16",
     "typescript": "^5.9.3"
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }

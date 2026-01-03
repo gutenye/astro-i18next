@@ -7,13 +7,13 @@ export function createConfigSetup(options: Options) {
     addMiddleware,
     updateConfig,
   }: HookParameters<'astro:config:setup'>) {
-    const { defaultLocale, locales } = options
+    const { lng, preload } = options
     setupI18next(options)
 
     updateConfig({
       i18n: {
-        defaultLocale,
-        locales: Object.keys(locales),
+        defaultLocale: lng,
+        locales: preload,
         routing: {
           prefixDefaultLocale: false,
           redirectToDefaultLocale: false,
