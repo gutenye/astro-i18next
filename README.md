@@ -12,7 +12,8 @@
 
 ## 🌟 Features
 
-Runs entirely at build time, emits zero client-side JavaScript, and follows the same core idea as Astro, generating static HTML for fast load times and minimal runtime overhead.
+- Emit zero JS: Runs entirely at build time, emits zero client-side JavaScript, and follows the same core idea as Astro, generating static HTML for fast load times and minimal runtime overhead.
+- Hot reload: Supports hot reload, edit transaction files update the page instantly.
 
 ## 📖 Getting Started
 
@@ -42,27 +43,20 @@ Create your locale files in `src/locales/`:
 }
 ```
 
-**`src/locales/index.ts`**
-
-```ts
-import en from "./en.json";
-import fr from "./fr.json";
-
-export const defaultLocale = "en";
-
-export const locales = { en, fr };
-```
-
 ### 3. Configure Astro
 
 **`astro.config.mjs`**
 
 ```ts
-import i18next from '@gutenye/astro-i18next'
-import { defaultLocale, locales } from ''./src/locales'
+import i18next from "@gutenye/astro-i18next";
 
 export default defineConfig({
-  integrations: [i18next({ defaultLocale, locales })],
+  integrations: [
+    i18next({
+      lng: "en", // default locale
+      preload: ["en", "fr"], // list of supported locales
+    }),
+  ],
 });
 ```
 
@@ -77,7 +71,7 @@ Create pages under `src/pages/[...locale]/` to enable locale routing:
 import { t } from 'i18next'
 export { getStaticPaths } from '@gutenye/astro-i18next'
 ---
-<div>t('greeting')</div>
+<div>{t('greeting')}</div>
 ```
 
 ### 5. Run or build your site

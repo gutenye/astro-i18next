@@ -1,4 +1,5 @@
 import type { AstroIntegration } from 'astro'
+import type { Options } from '~/types/index.js'
 import { createConfigSetup } from './createConfigSetup.js'
 
 export default function createIntegration(options: Options): AstroIntegration {
@@ -8,10 +9,4 @@ export default function createIntegration(options: Options): AstroIntegration {
       'astro:config:setup': createConfigSetup(options),
     },
   }
-}
-
-export interface Options {
-  locales: Record<string, any>
-  defaultLocale: string
-  loadPath: string
 }

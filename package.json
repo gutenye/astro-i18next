@@ -29,7 +29,8 @@
     "build"
   ],
   "dependencies": {
-    "i18next-fs-backend": "^2.6.1"
+    "i18next-fs-backend": "^2.6.1",
+    "lodash-es": "^4.17.22"
   },
   "peerDependencies": {
     "i18next": "*"
@@ -40,6 +41,7 @@
     "@semantic-release/git": "^10.0.1",
     "@tsconfig/bun": "^1.0.10",
     "@types/bun": "latest",
+    "@types/lodash-es": "^4.17.12",
     "astro": "^5.16.6",
     "conventional-changelog-conventionalcommits": "^9.1.0",
     "tsc-alias": "^1.8.16",
