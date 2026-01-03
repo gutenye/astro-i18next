@@ -12,8 +12,8 @@
 
 ## 🌟 Features
 
-- Emit zero JS: Runs entirely at build time, emits zero client-side JavaScript, and follows the same core idea as Astro, generating static HTML for fast load times and minimal runtime overhead.
-- Hot reload: Supports hot reload, edit transaction files update the page instantly.
+- **Zero Javascript ouptut**: Runs entirely at build time, emits zero client-side JavaScript, and follows the same core idea as Astro, generating static HTML for fast load times and minimal runtime overhead.
+- **Hot reload**: Supports hot reloading, edit transaction files updates the page instantly.
 
 ## 📖 Getting Started
 
