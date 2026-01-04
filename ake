@@ -9,6 +9,6 @@ const HELP = `
 
 app.name(PROJECT_NAME).enableCompletion().addHelpText("after", HELP.trimEnd());
 
-app.command("start", { isDefault: true }).action(async () => {
+app.command("s").action(async () => {
   $`tandem "tsc --project tsconfig.build.json --watch" "tsc-alias --project tsconfig.build.json --watch" "chokidar --initial build -c 'yalc push'"`;
 });
