@@ -1,0 +1,11 @@
+## 1.0.0 (2026-01-04)
+
+### Features
+
+* add tests ([6d1b0b7](https://github.com/gutenye/astro-i18next/commit/6d1b0b74b90a64a5a6676fce62b291bacbb6864d))
+* improve hot reload mode ([e8a3c1d](https://github.com/gutenye/astro-i18next/commit/e8a3c1d58bde6c204c088ea09bddca97034a5b03))
+
+### Bug Fixes
+
+* only reload changed lang ([80d70d0](https://github.com/gutenye/astro-i18next/commit/80d70d029d8d261236ffb8bcbbc160c8d84d24c6))
+* rename vite plugin ([1090248](https://github.com/gutenye/astro-i18next/commit/109024844aede9fa77b1f05d7adb03d5cee8db86))
