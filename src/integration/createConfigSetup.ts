@@ -54,7 +54,7 @@ function handleHotUpdate(options: Options): Plugin {
   const regex = new RegExp(`${pattern}$`)
 
   return {
-    name: 'i18next-hmr',
+    name: 'i18next-handle-hot-update',
     handleHotUpdate({ file }) {
       const match = regex.exec(file)
       if (match?.groups) {
