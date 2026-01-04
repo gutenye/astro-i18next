@@ -115,3 +115,4 @@ Thank you for using Astro I18next! If you found it helpful, please ⭐️ **star
   <strong><a href="#readme">⬆ Back to top ⬆</a></strong><br><br>
   Made with ❤️ by <a href="https://github.com/gutenye">Guten Ye</a>
 </p>
+
