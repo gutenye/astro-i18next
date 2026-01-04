@@ -47,14 +47,19 @@ function handleHotUpdate(options: Options): Plugin {
     typeof options.backend?.loadPath === 'string',
     'loadPath is not a string',
   )
-  const pattern = options.backend.loadPath.replace(/\{\{[^}]+\}\}/g, '.*')
+  const pattern = options.backend.loadPath.replace(
+    /\{\{(\w+)\}\}/g,
+    (_, name) => `(?<${name}>[^/]+)`,
+  )
   const regex = new RegExp(`${pattern}$`)
 
   return {
     name: 'i18next-hmr',
     handleHotUpdate({ file }) {
-      if (regex.test(file)) {
-        i18next.reloadResources(i18next.options.preload || [])
+      const match = regex.exec(file)
+      if (match?.groups) {
+        const { lng, ns } = match.groups
+        i18next.reloadResources(lng ? [lng] : undefined, ns ? [ns] : undefined)
       }
     },
   }
