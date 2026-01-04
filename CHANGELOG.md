@@ -1,3 +1,9 @@
+## [1.0.7](https://github.com/gutenye/astro-i18next/compare/v1.0.6...v1.0.7) (2026-01-04)
+
+### Bug Fixes
+
+* test ([0bc972f](https://github.com/gutenye/astro-i18next/commit/0bc972f6ccffb3f63956d485020a29d0f64ca8f6))
+
 ## [1.0.6](https://github.com/gutenye/astro-i18next/compare/v1.0.5...v1.0.6) (2026-01-04)
 
 ### Bug Fixes
