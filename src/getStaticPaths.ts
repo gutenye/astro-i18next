@@ -10,5 +10,5 @@ const staticPaths = locales.map((locale) => {
 })
 
 export async function getStaticPaths() {
-  return staticPaths
+  return [...staticPaths]
 }
