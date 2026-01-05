@@ -4,6 +4,14 @@
 
 * test ([0bc972f](https://github.com/gutenye/astro-i18next/commit/0bc972f6ccffb3f63956d485020a29d0f64ca8f6))
 
+## [1.0.8](https://github.com/gutenye/astro-i18next/compare/v1.0.7...v1.0.8) (2026-01-05)
+
+
+### Bug Fixes
+
+* return new instance for every getStaticPaths call ([#1](https://github.com/gutenye/astro-i18next/issues/1)) ([1c682bc](https://github.com/gutenye/astro-i18next/commit/1c682bceceab27bd78b4bd975c02f979fa3a437f))
+* use release-please ([#2](https://github.com/gutenye/astro-i18next/issues/2)) ([e7cf48f](https://github.com/gutenye/astro-i18next/commit/e7cf48fd404748b1aa289f27d82f32db306a2cb8))
+
 ## [1.0.6](https://github.com/gutenye/astro-i18next/compare/v1.0.5...v1.0.6) (2026-01-04)
 
 ### Bug Fixes
