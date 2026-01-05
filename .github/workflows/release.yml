@@ -1,45 +1,41 @@
 name: Release
-"on":
-  workflow_dispatch: null
+
+on:
   push:
     branches:
       - main
+
 permissions:
   id-token: write
   contents: write
   issues: write
   pull-requests: write
+
 jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      issues: write
-      pull-requests: write
-      id-token: write
     steps:
       - name: Release Please
+        id: release
         uses: googleapis/release-please-action@v4
         with:
-          fetch-depth: 0
           release-type: node
-        id: release
+
       - name: Checkout
+        # if: ${{ steps.release.outputs.release_created }}
         uses: actions/checkout@v4
-        if: ${{ steps.release.outputs.release_created }}
         with:
           fetch-depth: 0
+
       - name: Setup Bun
+        # if: ${{ steps.release.outputs.release_created }}
         uses: oven-sh/setup-bun@v2
-        with:
-          node-version: lts/*
-        if: ${{ steps.release.outputs.release_created }}
+
       - name: Install dependencies
+        # if: ${{ steps.release.outputs.release_created }}
         run: bun install --frozen-lockfile
-        if: ${{ steps.release.outputs.release_created }}
+
       - name: Bun Publish
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: bun publish
-        if: ${{ steps.release.outputs.release_created }}
+        # if: ${{ steps.release.outputs.release_created }}
+        run: bunx npm publish
