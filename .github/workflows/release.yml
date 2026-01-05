@@ -1,15 +1,14 @@
 name: Release
-
-on:
-  workflow_dispatch:
+"on":
+  workflow_dispatch: null
   push:
     branches:
       - main
-
 permissions:
   id-token: write
-  contents: read
-
+  contents: write
+  issues: write
+  pull-requests: write
 jobs:
   release:
     name: Release
@@ -20,19 +19,27 @@ jobs:
       pull-requests: write
       id-token: write
     steps:
+      - name: Release Please
+        uses: googleapis/release-please-action@v4
+        with:
+          fetch-depth: 0
+          release-type: node
+        id: release
       - name: Checkout
         uses: actions/checkout@v4
+        if: ${{ steps.release.outputs.release_created }}
         with:
           fetch-depth: 0
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
-      - name: Setup Node
-        uses: actions/setup-node@v3
         with:
-          node-version: "lts/*"
+          node-version: lts/*
+        if: ${{ steps.release.outputs.release_created }}
       - name: Install dependencies
         run: bun install --frozen-lockfile
-      - name: Release
+        if: ${{ steps.release.outputs.release_created }}
+      - name: Bun Publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: bun run semantic-release
+        run: bun publish
+        if: ${{ steps.release.outputs.release_created }}
