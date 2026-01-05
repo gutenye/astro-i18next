@@ -23,19 +23,19 @@ jobs:
           release-type: node
 
       - name: Checkout
-        # if: ${{ steps.release.outputs.release_created }}
+        if: ${{ steps.release.outputs.release_created }}
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - name: Setup Bun
-        # if: ${{ steps.release.outputs.release_created }}
+        if: ${{ steps.release.outputs.release_created }}
         uses: oven-sh/setup-bun@v2
 
       - name: Install dependencies
-        # if: ${{ steps.release.outputs.release_created }}
+        if: ${{ steps.release.outputs.release_created }}
         run: bun install --frozen-lockfile
 
       - name: Bun Publish
-        # if: ${{ steps.release.outputs.release_created }}
+        if: ${{ steps.release.outputs.release_created }}
         run: bunx npm publish
